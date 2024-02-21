@@ -1,7 +1,7 @@
 '''
 SENTIMENT ANALYSIS
 '''
-# src/sentiment_analysis.py
+
 from textblob import TextBlob
 
 def analyze_sentiment(text):

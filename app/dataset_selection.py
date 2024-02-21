@@ -9,11 +9,8 @@ column = None
 
 root = tk.Tk()
 root.title("Dataset Selection Tool")
-# Assicurati che il percorso alla favicon.ico sia corretto
 root.iconbitmap('favicon.ico')
 root.geometry("800x600")
-
-# Inizializzazione della casella di testo per i log
 log_text = scrolledtext.ScrolledText(root, height=10)
 log_text.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
 
@@ -56,14 +53,14 @@ def load_and_select_dataset():
         if column in columns:
             global selected_data
             selected_data = data[[column]]
-            save_btn.config(state=tk.NORMAL)  # Abilita il bottone di salvataggio
+            save_btn.config(state=tk.NORMAL)
         else:
             messagebox.showwarning("Warning", "Column not found.")
             save_btn.config(state=tk.DISABLED)
 
 
 def save_selected_column():
-    global selected_data, column  # Usa le variabili globali
+    global selected_data, column
     if selected_data is not None and column is not None:
         save_path = filedialog.asksaveasfilename(defaultextension=".txt",
                                                  filetypes=[("Text files", "*.txt"), ("All files", "*.*")],
